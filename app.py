@@ -13,278 +13,326 @@ st.set_page_config(
 # ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
-
-/* ── Reset & base ── */
+/* ── Natural light theme ───────────────────────────────────────────── */
 html, body, [class*="css"] {
-    font-family: 'DM Sans', sans-serif;
-    color: #e8e4dc;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #292722;
 }
 
 .stApp {
-    background: #0a0a0f;
-    background-image:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(255,140,50,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(255,80,30,0.08) 0%, transparent 55%);
+    background: #f6f3ed;
+    color: #292722;
 }
 
-/* ── Hide default streamlit chrome ── */
 #MainMenu, footer, header { visibility: hidden; }
-.block-container { padding: 2rem 3rem 4rem; max-width: 1200px; }
 
-/* ── Hero header ── */
+.block-container {
+    padding: 1.25rem 2rem 3.5rem;
+    max-width: 1180px;
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────── */
 .hero {
-    text-align: center;
-    padding: 3.5rem 0 2.5rem;
+    text-align: left;
+    padding: 2.4rem 0 1.8rem;
     position: relative;
 }
+
 .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #ff8c32;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+    color: #7c756b;
+    margin-bottom: 0.7rem;
 }
+
 .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
     font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    color: #f0ebe0;
-    margin: 0 0 1rem;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    color: #25231f;
+    margin: 0 0 0.75rem;
 }
+
 .hero h1 span {
-    color: #ff8c32;
+    color: #697b63;
 }
+
 .hero-sub {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: #a09890;
-    max-width: 520px;
-    margin: 0 auto;
+    font-size: 0.98rem;
+    font-weight: 400;
+    color: #777168;
+    max-width: 590px;
+    margin: 0;
     line-height: 1.65;
 }
 
-/* ── Divider ── */
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,140,50,0.3), transparent);
-    margin: 2rem 0;
+    background: #dfdbd2;
+    margin: 0 0 2rem;
 }
 
-/* ── Input card ── */
+/* ── Main cards ─────────────────────────────────────────────────────── */
 .input-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,140,50,0.15);
-    border-radius: 16px;
-    padding: 2rem 2.5rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(8px);
+    background: #fffdf9;
+    border: 1px solid #dfdbd2;
+    border-radius: 14px;
+    padding: 1.55rem 1.7rem 1.4rem;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 5px 18px rgba(53, 47, 38, 0.045);
 }
 
-/* ── Streamlit input overrides ── */
 .stTextInput > div > div > input {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,140,50,0.25) !important;
-    border-radius: 10px !important;
-    color: #f0ebe0 !important;
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 1rem !important;
-    padding: 0.75rem 1rem !important;
-    transition: border-color 0.2s, box-shadow 0.2s !important;
-}
-.stTextInput > div > div > input:focus {
-    border-color: #ff8c32 !important;
-    box-shadow: 0 0 0 3px rgba(255,140,50,0.12) !important;
-}
-.stTextInput > label {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 0.72rem !important;
-    letter-spacing: 0.15em !important;
-    text-transform: uppercase !important;
-    color: #ff8c32 !important;
-    font-weight: 500 !important;
+    background: #ffffff !important;
+    border: 1px solid #cfc9bf !important;
+    border-radius: 9px !important;
+    color: #292722 !important;
+    -webkit-text-fill-color: #292722 !important;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 0.96rem !important;
+    padding: 0.72rem 0.9rem !important;
+    box-shadow: none !important;
 }
 
-/* ── Button ── */
+.stTextInput > div > div > input::placeholder {
+    color: #a29b91 !important;
+    opacity: 1 !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #697b63 !important;
+    box-shadow: 0 0 0 3px rgba(105, 123, 99, 0.12) !important;
+}
+
+.stTextInput > label {
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace !important;
+    font-size: 0.67rem !important;
+    letter-spacing: 0.13em !important;
+    text-transform: uppercase !important;
+    color: #777168 !important;
+    font-weight: 600 !important;
+}
+
+/* ── Primary button ─────────────────────────────────────────────────── */
 .stButton > button {
-    background: linear-gradient(135deg, #ff8c32 0%, #ff5a1a 100%) !important;
-    color: #0a0a0f !important;
-    font-family: 'Syne', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    letter-spacing: 0.04em !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 0.7rem 2.2rem !important;
+    background: #30332e !important;
+    color: #fffdf9 !important;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-weight: 650 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.01em !important;
+    border: 1px solid #30332e !important;
+    border-radius: 9px !important;
+    padding: 0.68rem 1.4rem !important;
     cursor: pointer !important;
-    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s !important;
-    box-shadow: 0 4px 20px rgba(255,140,50,0.3) !important;
+    transition: background 0.15s, transform 0.15s !important;
+    box-shadow: none !important;
     width: 100%;
 }
+
 .stButton > button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 28px rgba(255,140,50,0.4) !important;
-    opacity: 0.95 !important;
+    background: #4c5547 !important;
+    border-color: #4c5547 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: none !important;
 }
+
 .stButton > button:active {
     transform: translateY(0) !important;
 }
 
-/* ── Pipeline step cards ── */
+/* ── Examples ───────────────────────────────────────────────────────── */
+.example-row {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.example-label {
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.66rem;
+    color: #928b82;
+    letter-spacing: 0.08em;
+    margin-right: 0.1rem;
+}
+
+.example-chip {
+    background: #eeeae2;
+    border: 1px solid #ddd8cf;
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+    color: #665f56;
+}
+
+/* ── Pipeline ───────────────────────────────────────────────────────── */
+.section-heading {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 750;
+    color: #292722;
+    margin: 0.2rem 0 0.85rem;
+}
+
 .step-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    padding: 1.5rem 1.8rem;
-    margin-bottom: 1.2rem;
+    background: #fffdf9;
+    border: 1px solid #dfdbd2;
+    border-radius: 12px;
+    padding: 1.15rem 1.35rem;
+    margin-bottom: 0.75rem;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s;
+    box-shadow: 0 3px 12px rgba(53, 47, 38, 0.035);
 }
+
 .step-card.active {
-    border-color: rgba(255,140,50,0.4);
-    background: rgba(255,140,50,0.04);
+    border-color: #aebaa8;
+    background: #f7f9f5;
 }
+
 .step-card.done {
-    border-color: rgba(80,200,120,0.3);
-    background: rgba(80,200,120,0.03);
+    border-color: #cbd5c7;
+    background: #f7f9f5;
 }
+
 .step-card::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 3px;
-    border-radius: 14px 0 0 14px;
-    background: rgba(255,255,255,0.05);
-    transition: background 0.3s;
+    background: #e4dfd6;
 }
-.step-card.active::before { background: #ff8c32; }
-.step-card.done::before   { background: #50c878; }
+
+.step-card.active::before { background: #697b63; }
+.step-card.done::before { background: #879a7d; }
 
 .step-header {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.3rem;
+    gap: 0.7rem;
+    margin-bottom: 0.25rem;
 }
+
 .step-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.63rem;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    color: #ff8c32;
-    opacity: 0.7;
+    letter-spacing: 0.1em;
+    color: #9b9388;
 }
+
 .step-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.91rem;
     font-weight: 700;
-    color: #f0ebe0;
+    color: #292722;
 }
+
 .step-status {
     margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-}
-.status-waiting  { color: #555; }
-.status-running  { color: #ff8c32; }
-.status-done     { color: #50c878; }
-
-/* ── Result panels ── */
-.result-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    padding: 1.8rem 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
-.result-panel-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #ff8c32;
-    margin-bottom: 1rem;
-    padding-bottom: 0.7rem;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
-}
-.result-content {
-    font-size: 0.92rem;
-    line-height: 1.8;
-    color: #cdc8bf;
-    white-space: pre-wrap;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
 }
 
-/* ── Report & feedback panels ── */
-.report-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,140,50,0.2);
-    border-radius: 16px;
-    padding: 2rem 2.5rem;
-    margin-top: 1rem;
+.status-waiting { color: #aaa39a; }
+.status-running { color: #697b63; }
+.status-done { color: #697b63; }
+
+.step-card div[style*="font-size:0.82rem"] {
+    color: #827a70 !important;
 }
+
+/* ── Results ───────────────────────────────────────────────────────── */
+.result-panel,
+.report-panel,
 .feedback-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(80,200,120,0.2);
-    border-radius: 16px;
-    padding: 2rem 2.5rem;
-    margin-top: 1rem;
-}
-.panel-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    background: #fffdf9;
+    border: 1px solid #dfdbd2;
+    border-radius: 13px;
+    padding: 1.5rem 1.7rem;
+    margin-top: 0.8rem;
     margin-bottom: 1.2rem;
-    padding-bottom: 0.7rem;
-}
-.panel-label.orange {
-    color: #ff8c32;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
-}
-.panel-label.green {
-    color: #50c878;
-    border-bottom: 1px solid rgba(80,200,120,0.15);
+    box-shadow: 0 4px 14px rgba(53, 47, 38, 0.035);
 }
 
-/* ── Progress text ── */
-.stSpinner > div { color: #ff8c32 !important; }
+.report-panel {
+    border-top: 3px solid #697b63;
+}
 
-/* ── Expander ── */
+.feedback-panel {
+    border-top: 3px solid #a08d70;
+}
+
+.result-panel-title,
+.panel-label {
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #777168;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #e5e1d9;
+}
+
+.panel-label.orange { color: #697b63; }
+.panel-label.green { color: #8a765e; }
+
+.result-content {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #4f4a43;
+    white-space: pre-wrap;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.stSpinner > div { color: #697b63 !important; }
+
 details summary {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 0.75rem !important;
-    color: #a09890 !important;
-    letter-spacing: 0.1em !important;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace !important;
+    font-size: 0.7rem !important;
+    color: #777168 !important;
+    letter-spacing: 0.07em !important;
     cursor: pointer;
 }
 
-/* ── Section heading ── */
-.section-heading {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #f0ebe0;
-    margin: 2rem 0 1rem;
+.stDownloadButton > button {
+    background: #fffdf9 !important;
+    color: #4f4a43 !important;
+    border: 1px solid #cfc9bf !important;
+    border-radius: 9px !important;
+    font-weight: 600 !important;
 }
 
-/* ── Toast-style notice ── */
+.stDownloadButton > button:hover {
+    border-color: #697b63 !important;
+    color: #697b63 !important;
+}
+
 .notice {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: #605850;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.65rem;
+    color: #aaa39a;
     text-align: center;
-    margin-top: 3rem;
-    letter-spacing: 0.08em;
+    margin-top: 2.5rem;
+    letter-spacing: 0.05em;
+}
+
+/* ── Mobile ────────────────────────────────────────────────────────── */
+@media (max-width: 850px) {
+    .block-container { padding: 1rem 1rem 2.5rem; }
+    .hero { padding: 1.5rem 0 1.25rem; }
+    .hero h1 { font-size: 3rem; }
+    .hero-sub { font-size: 0.9rem; }
+    .input-card { padding: 1.25rem; }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -306,7 +354,7 @@ def step_card(num: str, title: str, state: str, desc: str = ""):
             <span class="step-title">{title}</span>
             <span class="step-status {cls}">{label}</span>
         </div>
-        {"<div style='font-size:0.82rem;color:#706860;margin-top:0.3rem;'>"+desc+"</div>" if desc else ""}
+        {"<div style='font-size:0.82rem;color:#667085;margin-top:0.3rem;'>"+desc+"</div>" if desc else ""}
     </div>
     """, unsafe_allow_html=True)
 
@@ -347,22 +395,13 @@ with col_input:
 
     # Example chips
     st.markdown("""
-    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#605850;letter-spacing:0.1em;">TRY →</span>
+    <div class="example-row">
+        <span class="example-label">TRY →</span>
     """, unsafe_allow_html=True)
     examples = ["LLM agents 2025", "CRISPR gene editing", "Fusion energy progress"]
     for ex in examples:
         st.markdown(f"""
-        <span style="
-            background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.08);
-            border-radius:6px;
-            padding:0.25rem 0.7rem;
-            font-size:0.75rem;
-            color:#a09890;
-            font-family:'DM Sans',sans-serif;
-            cursor:default;
-        ">{ex}</span>
+        <span class="example-chip">{ex}</span>
         """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -437,6 +476,8 @@ if st.session_state.running and not st.session_state.done:
             f"SEARCH RESULTS:\n{results['search']}\n\n"
             f"DETAILED SCRAPED CONTENT:\n{results['reader']}"
         )
+        research_combined = research_combined[:10000]
+
         results["writer"] = writer_chain.invoke({
             "topic": topic_val,
             "research": research_combined
@@ -445,9 +486,11 @@ if st.session_state.running and not st.session_state.done:
 
     # ── Step 4: Critic ──
     with st.spinner("🧐  Critic is reviewing the report…"):
+        report_for_critic = results["writer"][:6000]
         results["critic"] = critic_chain.invoke({
-            "report": results["writer"]
+            "report": report_for_critic
         })
+
         st.session_state.results = dict(results)
 
     st.session_state.running = False
