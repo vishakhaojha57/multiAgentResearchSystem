@@ -86,7 +86,7 @@ Multi-agent-research-system/
 └── README.md           # Project documentation
 ⚙️ Installation
 1. Clone the repository
-git clone https://github.com/vishakhaojha57/Multi-agent-research-system.git
+git clone https://github.com/vishakhaojha57/MultiAgentResearchSystem.git
 2. Move into the project directory
 cd Multi-agent-research-system
 3. Create a virtual environment
