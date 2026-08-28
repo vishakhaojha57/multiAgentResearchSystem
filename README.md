@@ -13,41 +13,7 @@ Instead of relying on a single LLM call, ResearchMind uses specialized agents fo
 ⚡ Rate-limit handling — automatically retries when the API rate limit is temporarily reached.
 🛡️ Input/output limits — controls research and report size to reduce unnecessary API usage.
 🎨 Clean light UI — simple Streamlit interface for running the complete pipeline.
-🏗️ Architecture
-                    ┌─────────────────┐
-                    │      User       │
-                    │ Research Topic  │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Search Agent   │
-                    │   Web Search    │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Reader Agent   │
-                    │  Scrape URLs    │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Writer Chain   │
-                    │ Research Report │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Critic Chain   │
-                    │ Review + Score   │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Final Report   │
-                    │ + Feedback      │
-                    └─────────────────┘
+
 🧠 How It Works
 1. Search Agent
 
